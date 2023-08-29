@@ -27,7 +27,7 @@ class AuthManager extends Controller
 
         $credentials = $request->only('email','password');
         if(Auth::attempt($credentials)){
-            return redirect()-> intended(route('home'));
+            return redirect()-> intended(route('welcome'));
         }
         return redirect(route('login'))->with("error", "Login details are not valid");
     }
@@ -50,6 +50,7 @@ class AuthManager extends Controller
         }
         return redirect(route('login'))->with("success", "You are now registered.");
     }
+
 
     function logout(){
         FacadesSession::flush();
