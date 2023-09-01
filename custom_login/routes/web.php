@@ -23,3 +23,8 @@ Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::get('/registration', [AuthManager::class, 'registration'])->name('registration');
 Route::post('/registration', [AuthManager::class, 'registrationPost'])->name('registration.post');
 Route::get('/logout',[AuthManager::class, 'logout'])-> name('logout');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/quiz', 'QuizController@showQuiz')->name('quiz.show');
+Route::post('/profile/upload', 'ProfileController@upload')->name('profile.upload');

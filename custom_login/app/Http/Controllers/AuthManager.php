@@ -57,4 +57,7 @@ class AuthManager extends Controller
         Auth::logout();
         return redirect(route('login'));
     }
+    function quiz(){
+        return view('quiz');
+    }
 }

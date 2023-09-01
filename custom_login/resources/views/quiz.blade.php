@@ -6,7 +6,7 @@
     <div id="quiz">
         <form id="quiz-form">
             @foreach ($quizData as $index => $question)
-            <div class="question" id="question-{{ $index }}" style="display: {{ $index === 0 ? 'block' : 'none' }}">
+            <div class="question" id="question-{{ $index }}">
                 <h2>Question {{ $index + 1 }}</h2>
                 <p>{{ $question['question'] }}</p>
                 <ul class="list-group">
